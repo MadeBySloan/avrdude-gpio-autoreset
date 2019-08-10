@@ -73,7 +73,7 @@ Download [avrdude-gpio-autoreset](https://github.com/TOLDOTECHNIK/avrdude-gpio-a
 - After compiling your own sketch in the Arduino IDE you have to find the generated HEX file and copy it to the Raspberry Pi. On Windows it is located under the temp folder (Press Windows-R, type in %temp% and press Enter). There you will find a build folder containing the HEX file).
 - On the Raspberry Pi open up a terminal window and type:
 ```
-# sudo avrdude -D -V -F -c arduino -p m328p -P /dev/ttyAMA0 -U flash:w:PATH_TO_YOUR_ARDUINO_FIRMWARE.hex:i
+# sudo avrdude -D -V -F -b 57600 -c arduino -p m328p -P /dev/ttyS0 -U flash:w:PATH_TO_YOUR_ARDUINO_FIRMWARE.hex:i
 ```
 
 **Please note:** On Raspberry Pi 3 or Raspberry Pi Zero W the ttyAMA0 is used for Bluetooth communication by default. If so, use ttyS0 for uploading instead.
